@@ -8,12 +8,12 @@ import os
 load_dotenv()
 
 # Load Excel workbook with 2 sheets
-df_master = pd.read_excel("students.xlsx", sheet_name="MasterList")
-df_attendance = pd.read_excel("students.xlsx", sheet_name="Attendance")
+df_master = pd.read_excel("/workspaces/pythonprojects/rollcheckalert/students.xlsx", sheet_name="main")
+df_attendance = pd.read_excel("/workspaces/pythonprojects/rollcheckalert/students.xlsx", sheet_name="attendance")
 
 # Extract roll numbers as sets
-rollnos_master = set(df_master["RollNo"])
-rollnos_attendance = set(df_attendance["RollNo"])
+rollnos_master = set(df_master["enrolno"])
+rollnos_attendance = set(df_attendance["enrolno"])
 
 # Find missing roll numbers
 missing_rollnos = rollnos_master - rollnos_attendance
