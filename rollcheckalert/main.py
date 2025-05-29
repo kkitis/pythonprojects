@@ -11,16 +11,11 @@ load_dotenv()
 df_master = pd.read_excel("/workspaces/pythonprojects/rollcheckalert/students.xlsx", sheet_name="main")
 df_attendance = pd.read_excel("/workspaces/pythonprojects/rollcheckalert/students.xlsx", sheet_name="attendance")
 
-# remove spaces from column names
-df_master.columns = df_master.columns.str.strip()
-df_attendance.columns = df_attendance.columns.str.strip()
+
 
 # Extract roll numbers as sets
 rollnos_master = set(df_master["enrolno"])
 rollnos_attendance = set(df_attendance["Unnamed: 1"])
-
-# print(df_master.columns)
-# print(df_attendance.columns)
 
 # Find missing roll numbers
 missing_rollnos = rollnos_master - rollnos_attendance
