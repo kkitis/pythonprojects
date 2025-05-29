@@ -17,7 +17,14 @@ df_attendance.columns = df_attendance.columns.str.strip()
 
 # Extract roll numbers as sets
 rollnos_master = set(df_master["enrolno"])
-rollnos_attendance = set(df_attendance["enrolno"])
+rollnos_attendance = set(df_attendance["Unnamed: 1"])
 
-print(df_master)
+# print(df_master.columns)
+# print(df_attendance.columns)
+
+# Find missing roll numbers
+missing_rollnos = rollnos_master - rollnos_attendance
+
+# Print to console (for debugging)
+print("Missing Roll Numbers:", missing_rollnos)
 
