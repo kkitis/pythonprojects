@@ -1,6 +1,8 @@
-f = open('C:\pythonprojects\pythonprojects\explorer\demo.txt', 'r')
-data= f.read()
-print(data)
-print(type(data))
-f.close()
-# The code reads the contents of 'demo.txt' and prints it along with its type.
+with open("practice.txt","r") as f:
+    data = f.read()
+    new_data = data.replace("java","python")
+    print(new_data)
+    new_data = data.replace(";","l")
+with open("practice.txt","w") as f:
+    f.write(new_data)
+print ("File overwritten successfully.")
